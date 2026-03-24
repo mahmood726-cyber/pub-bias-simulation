@@ -1,0 +1,31 @@
+Package: pubbias.sim
+Type: Package
+Title: Publication Bias Adjustment Methods: A Comprehensive Simulation Study
+Version: 1.0.0
+Authors@R: c(
+    person(
+      "Mahmood", "Ahmad",
+      email = "[EMAIL_PLACEHOLDER]",
+      role = c("aut", "cre"),
+      comment = c(ORCID = "[ORCID_PLACEHOLDER]")
+    )
+  )
+Description: Comprehensive simulation study comparing Trim and Fill, PET-PEESE,
+    and Copas selection model for correcting publication bias in meta-analysis.
+    Evaluates performance across 135 scenarios varying effect size, heterogeneity,
+    study count, and bias mechanism.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 4.1.0)
+Imports:
+    metafor,
+    metasens,
+    ggplot2,
+    dplyr,
+    tidyr
+Suggests:
+    rmarkdown,
+    knitr,
+    testthat

@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^renv$
+^renv\.lock$
+^manuscript$
+^supplementary$
+^comprehensive_simulation_raw\.csv$
+^comprehensive_simulation_raw\.rds$
+^comprehensive_simulation_summary\.csv$
+^simulation_full_results\.csv$
+^simulation_summary\.csv$
+^LICENSE$
+^README\.md$

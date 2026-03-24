@@ -1,0 +1,79 @@
+"dataset","source","yi","vi","dv_aligned","id_exp","n_total","setting","location","attrition","curriculum","assignment","weight"
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.9857,0.175003664970238,"yes",1,26,"other","one site",0,"fixed curriculum","random assignment or matching",5.71416604429436
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.0743,0.178806081636905,"yes",1,26,"other","one site",0,"fixed curriculum","random assignment or matching",5.59265093695562
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.6451,0.163431779970238,"yes",1,26,"other","one site",0,"fixed curriculum","random assignment or matching",6.11876099117385
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5781,0.161724396636905,"yes",1,26,"other","one site",0,"fixed curriculum","random assignment or matching",6.18335897857852
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.0783,0.154889631636905,"yes",1,26,"other","one site",0,"fixed curriculum","random assignment or matching",6.45621007314562
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.5665,0.177748611607143,"yes",2,30,"other","one site",0,"fixed curriculum","random assignment or matching",5.62592298729277
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.8504,0.146842502857143,"yes",2,30,"other","one site",0,"fixed curriculum","random assignment or matching",6.81001740329132
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.1237,0.134201815892857,"yes",2,30,"other","one site",0,"fixed curriculum","random assignment or matching",7.45146400104133
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5822,0.139981372142857,"yes",2,30,"other","one site",0,"fixed curriculum","random assignment or matching",7.14380767020527
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.4406,0.137395149285714,"yes",2,30,"other","one site",0,"fixed curriculum","random assignment or matching",7.27827732782978
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.391,0.113943388528139,"yes",3,44,"other","one site",0,"not fixed","random assignment or matching",8.77628805775812
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.9366,0.101352180909091,"yes",3,44,"other","one site",0,"not fixed","random assignment or matching",9.86658590895998
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.7995,0.0985186176948052,"no",3,44,"other","one site",0,"not fixed","random assignment or matching",10.150365721714
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.1802,0.107490900909091,"yes",3,44,"other","one site",0,"not fixed","random assignment or matching",9.30311302205697
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.0791,0.0354033195452962,"yes",4,132,"other","one site",61.9246861924686,"not fixed","random assignment or matching",28.2459388792784
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.0254,0.0353817362760654,"yes",4,132,"other","one site",61.9246861924686,"not fixed","random assignment or matching",28.2631692293876
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5117,0.123389447020285,"yes",5,34,"other",">1 site",9.52380952380952,"not fixed","not random/matched + one-group design",8.10442079244915
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5003,0.123209184520285,"yes",5,34,"other",">1 site",9.52380952380952,"not fixed","not random/matched + one-group design",8.1162780509708
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.8574,0.130784726239035,"yes",5,34,"other",">1 site",9.52380952380952,"not fixed","not random/matched + one-group design",7.6461527944196
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.083,0.119405886239035,"yes",5,34,"other",">1 site",9.52380952380952,"not fixed","not random/matched + one-group design",8.3747965154593
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.6542,0.0879852642028985,"yes",6,48,"other","one site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",11.3655395486902
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.738,0.0892533768115942,"yes",6,48,"other","one site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",11.2040578824363
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.0778,0.0959599946376812,"yes",6,48,"other","one site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",10.4210093359814
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.3732,0.0848472272463768,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.7858889730861
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.0674,0.0833827111594203,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.9928938037058
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.0532,0.0833640968115942,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.9955716938916
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.1917,0.0837327777898551,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.9427543955332
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.6932,0.0885564446376812,"yes",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.2922329265971
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5211,0.0862849117028985,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.5895117728492
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.3615,0.0847537925724638,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.7988820281406
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.6856,0.0884425437681159,"no",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.3067756465922
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.1571,0.0836015986594203,"yes",7,48,"other",">1 site",0,"not fixed","not random/matched + one-group design",11.9614937517384
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.5244,0.10361836,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",9.65079933710589
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.8051,0.108528763289474,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",9.21414719646942
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.4003,0.1258005275,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",7.94909226433888
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.6916,0.10629356,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",9.407907685094
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.33,0.101432894736842,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",9.8587347092322
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.53,0.103696052631579,"yes",8,40,"other",">1 site",16.6666666666667,"fixed curriculum","not random/matched + one-group design",9.64356862794858
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.0253,0.0463085421354167,"yes",9,98,"other",">1 site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",21.5942880921574
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.9756,0.0457906008333333,"yes",9,98,"other",">1 site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",21.838542884374
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.0253,0.0463085421354167,"yes",9,98,"other",">1 site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",21.5942880921574
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.105,0.0408907552083333,"yes",9,98,"other",">1 site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",24.4554055043768
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.2067,0.0410558588020833,"yes",9,98,"other",">1 site",31.4285714285714,"fixed curriculum","not random/matched + one-group design",24.3570596055649
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.482,0.258297285714286,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.87150796894608
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.1783,0.251135388928571,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.9819159070585
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.2097,0.251570503214286,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.97502881785869
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.4872,0.25847728,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.86881198997452
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.6493,0.265056803214286,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.77277620447096
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.3932,0.255521651428571,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.91356268405905
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.1502,0.250805715714286,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.98714996248006
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.2982,0.25317583,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.94982412025666
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.7273,0.2688916175,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.71897052536418
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.7773,0.271578403214286,"yes",10,16,"other","one site",0,"fixed curriculum","not random/matched + one-group design",3.68217792049893
+"metaforest::fukkink_lont::fukkink_lont","metaforest",2.0189,0.371976351444444,"yes",11,17,"other","one site",0,"fixed curriculum","not random/matched + one-group design",2.68834294469753
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.4911,0.02996361,"yes",12,156,"other","one site",64.4067796610169,"fixed curriculum","random assignment or matching",33.3738157718646
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.48,0.03010225,"yes",12,156,"other","one site",64.4067796610169,"fixed curriculum","random assignment or matching",33.220108131452
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0,0.117647058823529,"no",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",8.50000000000003
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0,0.117647058823529,"no",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",8.50000000000003
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.2688,0.142801018823529,"yes",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",7.00275115848986
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.9874,0.132880789448529,"yes",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",7.52554228606045
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.3209,0.144909196479779,"yes",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",6.90087326610456
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.9091,0.130560540229779,"no",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",7.65928203299449
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0,0.117647058823529,"yes",13,34,"other",">1 site",34.6153846153846,"not fixed","random assignment or matching",8.50000000000003
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.0332,0.019457575608289,"no",14,207,"family day care",">1 site",26.9230769230769,"not fixed","random assignment or matching",51.3938642784457
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.2377,0.0195926952424354,"no",14,207,"family day care",">1 site",26.9230769230769,"not fixed","random assignment or matching",51.0394301358866
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.1212,0.0194907151204841,"no",14,207,"family day care",">1 site",26.9230769230769,"not fixed","random assignment or matching",51.3064807431839
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.1487,0.0195088181692646,"no",14,207,"family day care",">1 site",26.9230769230769,"not fixed","random assignment or matching",51.2588713126386
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.1086,0.0194836529741427,"no",14,207,"family day care",">1 site",26.9230769230769,"not fixed","random assignment or matching",51.3250775574338
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.5871,0.194273456602564,"yes",15,28,"other","one site",0,"fixed curriculum","not random/matched + one-group design",5.14738357719014
+"metaforest::fukkink_lont::fukkink_lont","metaforest",1.1533,0.171412196602564,"yes",15,28,"other","one site",0,"fixed curriculum","not random/matched + one-group design",5.83389058550249
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.97,0.163927564102564,"yes",15,28,"other","one site",0,"fixed curriculum","not random/matched + one-group design",6.1002553504323
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.8558,0.159917826410256,"yes",15,28,"other","one site",0,"fixed curriculum","not random/matched + one-group design",6.25321155525577
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0,0.0212765957446809,"yes",16,188,"other",">1 site",50,"not fixed","not random/matched + one-group design",46.9999999999999
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.1181,0.0213140893199497,"yes",16,188,"other",">1 site",50,"not fixed","not random/matched + one-group design",46.9173223865593
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.8863,0.06370576,"no",17,44,"other",">1 site",41,"not fixed","not random/matched + one-group design",15.6971677286324
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.4823,0.05053504,"no",17,44,"other",">1 site",41,"not fixed","not random/matched + one-group design",19.788249895518
+"metaforest::fukkink_lont::fukkink_lont","metaforest",0.2183,0.04613904,"no",17,44,"other",">1 site",41,"not fixed","not random/matched + one-group design",21.6736195638227
+"metaforest::fukkink_lont::fukkink_lont","metaforest",-0.137,0.04545424,"no",17,44,"other",">1 site",41,"not fixed","not random/matched + one-group design",22.0001478409935

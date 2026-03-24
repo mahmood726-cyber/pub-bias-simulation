@@ -1,0 +1,61 @@
+"dataset","source","yi","vi","intelligencemeasure","cpsmeasure","weight"
+"metaSEM::Stadler15::Stadler15","metaSEM",0.423648930193602,0.00609756097560976,"Reasoning","MCS",164
+"metaSEM::Stadler15::Stadler15","metaSEM",0.151140435936467,0.0112359550561798,"General intelligence","Classical",89
+"metaSEM::Stadler15::Stadler15","metaSEM",0.161386696131526,0.00709219858156028,"Reasoning","SCS",141
+"metaSEM::Stadler15::Stadler15","metaSEM",0.972955074527657,0.0263157894736842,"General intelligence","Classical",38
+"metaSEM::Stadler15::Stadler15","metaSEM",0.223656109021832,0.0277777777777778,"General intelligence","Classical",36
+"metaSEM::Stadler15::Stadler15","metaSEM",0.510070336613307,0.024390243902439,"General intelligence","Classical",41
+"metaSEM::Stadler15::Stadler15","metaSEM",1.29334467204897,0.00588235294117647,"Reasoning","SCS",170
+"metaSEM::Stadler15::Stadler15","metaSEM",-0.0300090048631265,0.0222222222222222,"Reasoning","Classical",45
+"metaSEM::Stadler15::Stadler15","metaSEM",0.120581028408444,0.0222222222222222,"Reasoning","Classical",45
+"metaSEM::Stadler15::Stadler15","metaSEM",0.0902441878561468,0.0384615384615385,"General intelligence","Classical",26
+"metaSEM::Stadler15::Stadler15","metaSEM",0.887183863258093,0.0833333333333333,"Reasoning","Classical",12
+"metaSEM::Stadler15::Stadler15","metaSEM",0.741416144081269,0.04,"Reasoning","Classical",25
+"metaSEM::Stadler15::Stadler15","metaSEM",0.342828254415394,0.0140845070422535,"Reasoning","Classical",71
+"metaSEM::Stadler15::Stadler15","metaSEM",0.549306144334055,0.0072992700729927,"Reasoning","MCS",137
+"metaSEM::Stadler15::Stadler15","metaSEM",0.244774112659353,0.00297619047619048,"Reasoning","Classical",336
+"metaSEM::Stadler15::Stadler15","metaSEM",0.576339754969193,0.00297619047619048,"Reasoning","MCS",336
+"metaSEM::Stadler15::Stadler15","metaSEM",0.192337169219545,0.00196850393700787,"General intelligence","Classical",508
+"metaSEM::Stadler15::Stadler15","metaSEM",0.266108406873654,0.0555555555555556,"General intelligence","Classical",18
+"metaSEM::Stadler15::Stadler15","metaSEM",-0.171666663500579,0.037037037037037,"Reasoning","Classical",27
+"metaSEM::Stadler15::Stadler15","metaSEM",0.0600721559210316,0.037037037037037,"Reasoning","Classical",27
+"metaSEM::Stadler15::Stadler15","metaSEM",0.400059650056057,0.037037037037037,"Reasoning","Classical",27
+"metaSEM::Stadler15::Stadler15","metaSEM",0.497311287572031,0.037037037037037,"Reasoning","Classical",27
+"metaSEM::Stadler15::Stadler15","metaSEM",0.497311287572031,0.0625,"General intelligence","Classical",16
+"metaSEM::Stadler15::Stadler15","metaSEM",-0.0300090048631265,0.0555555555555556,"General intelligence","Classical",18
+"metaSEM::Stadler15::Stadler15","metaSEM",-0.309519604203112,0.0833333333333333,"Reasoning","Classical",12
+"metaSEM::Stadler15::Stadler15","metaSEM",0.255412811882995,0.0833333333333333,"Reasoning","Classical",12
+"metaSEM::Stadler15::Stadler15","metaSEM",0.365443754271396,0.0833333333333333,"Reasoning","Classical",12
+"metaSEM::Stadler15::Stadler15","metaSEM",0.549306144334055,0.0833333333333333,"Reasoning","Classical",12
+"metaSEM::Stadler15::Stadler15","metaSEM",0.400059650056057,0.00662251655629139,"General intelligence","Classical",151
+"metaSEM::Stadler15::Stadler15","metaSEM",0.266108406873654,0.0104166666666667,"General intelligence","Classical",96
+"metaSEM::Stadler15::Stadler15","metaSEM",0.662462707371799,0.00154559505409583,"Reasoning","Classical",647
+"metaSEM::Stadler15::Stadler15","metaSEM",0.130739850028878,0.0285714285714286,"General intelligence","Classical",35
+"metaSEM::Stadler15::Stadler15","metaSEM",0.309519604203112,0.00869565217391304,"General intelligence","SCS",115
+"metaSEM::Stadler15::Stadler15","metaSEM",0.354092528962243,0.00515463917525773,"General intelligence","MCS",194
+"metaSEM::Stadler15::Stadler15","metaSEM",0.562729769352149,0.04,"Reasoning","SCS",25
+"metaSEM::Stadler15::Stadler15","metaSEM",0.810743125475137,0.0102040816326531,"Reasoning","SCS",98
+"metaSEM::Stadler15::Stadler15","metaSEM",0.741416144081269,0.0018796992481203,"General intelligence","MCS",532
+"metaSEM::Stadler15::Stadler15","metaSEM",1.2211735176846,0.00153609831029186,"Reasoning","Classical",651
+"metaSEM::Stadler15::Stadler15","metaSEM",0.459896681212679,0.0050761421319797,"Reasoning","Classical",197
+"metaSEM::Stadler15::Stadler15","metaSEM",0.0500417292784913,0.04,"Reasoning","Classical",25
+"metaSEM::Stadler15::Stadler15","metaSEM",0.725005087752999,0.00174520069808028,"Reasoning","MCS",573
+"metaSEM::Stadler15::Stadler15","metaSEM",0.37688590118819,0.0212765957446809,"General intelligence","Classical",47
+"metaSEM::Stadler15::Stadler15","metaSEM",0.342828254415394,0.0169491525423729,"Reasoning","Classical",59
+"metaSEM::Stadler15::Stadler15","metaSEM",0.618381313574464,0.00124688279301746,"Reasoning","SCS",802
+"metaSEM::Stadler15::Stadler15","metaSEM",0.662462707371799,0.000673854447439353,"Reasoning","SCS",1484
+"metaSEM::Stadler15::Stadler15","metaSEM",0.309519604203112,0.0172413793103448,"Reasoning","MCS",58
+"metaSEM::Stadler15::Stadler15","metaSEM",0.202732554054082,0.0133333333333333,"General intelligence","SCS",75
+"metaSEM::Stadler15::Stadler15","metaSEM",1.1881364043926,0.00632911392405063,"Reasoning","MCS",158
+"metaSEM::Stadler15::Stadler15","metaSEM",0.950479380596523,0.00398406374501992,"Reasoning","MCS",251
+"metaSEM::Stadler15::Stadler15","metaSEM",0.510070336613307,0.00806451612903226,"Reasoning","Classical",124
+"metaSEM::Stadler15::Stadler15","metaSEM",0.423648930193602,0.004739336492891,"Reasoning","Classical",211
+"metaSEM::Stadler15::Stadler15","metaSEM",0.741416144081269,0.03125,"Reasoning","SCS",32
+"metaSEM::Stadler15::Stadler15","metaSEM",0.320545409301946,0.0166666666666667,"Reasoning","SCS",60
+"metaSEM::Stadler15::Stadler15","metaSEM",0.202732554054082,0.0147058823529412,"General intelligence","SCS",68
+"metaSEM::Stadler15::Stadler15","metaSEM",0.510070336613307,0.0075187969924812,"General intelligence","SCS",133
+"metaSEM::Stadler15::Stadler15","metaSEM",0.244774112659353,0.0208333333333333,"General intelligence","SCS",48
+"metaSEM::Stadler15::Stadler15","metaSEM",0.497311287572031,0.00145985401459854,"Reasoning","SCS",685
+"metaSEM::Stadler15::Stadler15","metaSEM",0.647522844827373,0.0112359550561798,"General intelligence","Classical",89
+"metaSEM::Stadler15::Stadler15","metaSEM",0.677666067757962,0.0045662100456621,"Reasoning","MCS",219
+"metaSEM::Stadler15::Stadler15","metaSEM",0.792813631870191,0.000313676286072773,"Reasoning","MCS",3188

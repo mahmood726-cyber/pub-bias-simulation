@@ -1,0 +1,331 @@
+---
+title: "Evaluating the Performance of Publication Bias Adjustment Methods in Meta-Analysis: A Comprehensive Simulation Study"
+author:
+  - name: Mahmood Ahmad
+    affiliation: "[AFFILIATION_PLACEHOLDER]"
+    email: "[EMAIL_PLACEHOLDER]"
+    orcid: "[ORCID_PLACEHOLDER]"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+abstract: |
+  **Background:** Publication bias is a critical threat to the validity of meta-analyses. Various methods have been developed to detect and adjust for this bias, including Trim and Fill (TF), PET-PEESE (PP), and the Copas selection model. However, their relative performance under varying levels of heterogeneity and study counts remains poorly characterized.
+
+  **Methods:** We conducted a comprehensive simulation study comparing four approaches: naive random-effects meta-analysis, Trim and Fill, PET-PEESE, and the Copas selection model. We generated meta-analytic datasets under a full factorial design crossing true effect size (0.3, 0.5, 0.8), number of studies (10, 20, 50), heterogeneity level (tau = 0.1, 0.3, 0.5), and bias mechanism (none, continuous, and step-function at mild/moderate/severe levels). Across the 135 scenarios, approximately 100 simulations were performed per scenario (13,480 total), yielding a comprehensive dataset of 135 summary conditions. Performance was evaluated based on mean bias, root mean square error (RMSE), mean absolute error (MAE), 95% confidence interval coverage, and convergence rates.
+
+  **Results:** PET-PEESE frequently overcorrected for publication bias, particularly in scenarios with high heterogeneity (tau >= 0.3), leading to substantial negative bias and poor coverage (sometimes below 50%). The Copas selection model demonstrated the lowest RMSE across most scenarios when the number of studies was 20 or more, though convergence was imperfect with small study counts (k = 10). Trim and Fill performed well in low-heterogeneity settings but provided insufficient correction when heterogeneity was substantial. All methods struggled with k = 10, producing unstable estimates.
+
+  **Conclusions:** No single publication bias adjustment method is universally superior. Researchers should consider heterogeneity magnitude and number of available studies when selecting an adjustment approach. We recommend reporting results from multiple methods and exercising particular caution with PET-PEESE under high heterogeneity. The Copas selection model offers a robust alternative when sufficient studies are available.
+
+bibliography: references.bib
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    fig_caption: true
+  pdf_document:
+    toc: true
+    number_sections: true
+    fig_caption: true
+  word_document:
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 7, dpi = 300)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(knitr)
+
+# Load the simulation summary data
+df <- read.csv("../comprehensive_simulation_summary.csv")
+```
+
+# Introduction
+
+Meta-analysis has become the cornerstone of evidence-based medicine, providing a quantitative synthesis of research findings across multiple studies. However, the validity of meta-analytic conclusions is often compromised by publication bias -- the phenomenon whereby studies with statistically significant results are more likely to be published than those with non-significant or negative results [@egger1997bias]. This selective publication inflates pooled effect estimates and can lead to misleading clinical recommendations.
+
+Several methods have been proposed to detect and adjust for publication bias. The Trim and Fill method [@duval2000trim] is among the most widely used, owing to its simplicity and intuitive graphical interpretation through funnel plot augmentation. More recently, PET-PEESE [@stanley2014metabias] has gained popularity, particularly in psychology and economics, as a regression-based approach that conditions the correction on the precision of individual studies. The Copas selection model [@copas1999what] takes a fundamentally different approach by explicitly modeling the selection process through a maximum likelihood framework that jointly estimates the effect and the probability of publication.
+
+Despite the availability of these methods, choosing the most appropriate adjustment approach remains challenging for practitioners. Previous simulation studies have compared subsets of these methods [@carter2019correcting; @moreno2009assessment], but typically under limited ranges of heterogeneity, study counts, or bias mechanisms. In particular, the interaction between heterogeneity magnitude and method performance has received insufficient attention.
+
+This study provides a comprehensive evaluation of three widely used publication bias adjustment methods, plus an unadjusted baseline, across 135 simulation scenarios spanning realistic ranges of effect size, heterogeneity, study count, and bias mechanism. Our aim is to offer practical guidance for researchers on when each method performs adequately and when it may produce misleading results.
+
+# Materials and Methods
+
+## Simulation Design
+
+We generated meta-analytic datasets under a full factorial design with the following parameters:
+
+- **Number of studies (k):** 10, 20, and 50, representing small, moderate, and large meta-analyses.
+- **True effect size ($\theta$):** 0.3 (small), 0.5 (medium), and 0.8 (large), on the standardized mean difference scale.
+- **Between-study heterogeneity ($\tau$):** 0.1 (low), 0.3 (moderate), and 0.5 (high).
+- **Bias mechanism:** Five levels were simulated: no bias (control), continuous selection (probability of publication proportional to study precision), and three step-function selection levels (mild, moderate, and severe) representing increasing degrees of suppression of non-significant results.
+
+This yields $3 \times 3 \times 3 \times 5 = 135$ unique parameter combinations. For each scenario, approximately 100 simulation replications were performed, yielding 13,480 individual meta-analyses in the raw dataset.
+
+Within each replication, study-level effect sizes were generated from $\theta_i \sim N(\theta, \tau^2)$, with within-study variances drawn from realistic distributions. Publication bias was then imposed by selectively suppressing studies according to the specified mechanism.
+
+## Methods Evaluated
+
+Four approaches were applied to each simulated meta-analytic dataset:
+
+1.  **Naive Random-Effects (RE):** Standard DerSimonian-Laird random-effects meta-analysis without any adjustment for publication bias, serving as the baseline comparator.
+2.  **Trim and Fill (TF):** The L0 estimator was used to identify and impute "missing" studies in the funnel plot, and the pooled estimate was recalculated including imputed studies [@duval2000trim].
+3.  **PET-PEESE (PP):** A conditional two-step approach. PET (Precision-Effect Test) regresses effect sizes on standard errors; if the PET intercept is statistically significant ($p < 0.10$), PEESE (Precision-Effect Estimate with Standard Error) is used instead, regressing on the variance [@stanley2014metabias].
+4.  **Copas Selection Model:** A maximum likelihood approach that jointly models the true effect distribution and a selection function governing the probability of publication [@copas1999what]. The selection function is parameterized by two parameters ($\gamma_0$, $\gamma_1$) estimated from the data.
+
+## Performance Metrics
+
+Performance was assessed using the following metrics, computed across all replications within each scenario:
+
+- **Mean Bias:** Average difference between the estimated and true effect size ($\bar{\hat{\theta}} - \theta$). Positive values indicate overestimation.
+- **Root Mean Square Error (RMSE):** $\sqrt{\text{E}[(\hat{\theta} - \theta)^2]}$, capturing both bias and variance.
+- **Mean Absolute Error (MAE):** Average of $|\hat{\theta} - \theta|$, a robust measure of estimation accuracy.
+- **95% CI Coverage:** Proportion of simulations in which the 95% confidence interval contained the true effect size. Nominal coverage is 95%.
+- **Convergence Rate:** Proportion of simulations in which the method produced a valid estimate (relevant for Copas and PET-PEESE).
+
+## Software
+
+All simulations and analyses were conducted in R (version 4.5.1). The `metafor` package was used for random-effects estimation and Trim and Fill. PET-PEESE was implemented via weighted least squares meta-regression. The Copas selection model was fitted using the `metasens` package. Code and data are available in the project repository.
+
+# Results
+
+```{r data-prep}
+# Prepare long-format data for plotting
+bias_df <- df %>%
+  select(bias_type, k_scenario, true_effect, true_tau,
+         naive_bias, tf_bias, pp_bias, copas_bias) %>%
+  pivot_longer(cols = ends_with("_bias"),
+               names_to = "method",
+               values_to = "bias") %>%
+  mutate(method = recode(gsub("_bias", "", method),
+                         "naive" = "Naive RE",
+                         "tf" = "Trim & Fill",
+                         "pp" = "PET-PEESE",
+                         "copas" = "Copas"))
+
+rmse_df <- df %>%
+  select(bias_type, k_scenario, true_effect, true_tau,
+         naive_rmse, tf_rmse, pp_rmse, copas_rmse) %>%
+  pivot_longer(cols = ends_with("_rmse"),
+               names_to = "method",
+               values_to = "rmse") %>%
+  mutate(method = recode(gsub("_rmse", "", method),
+                         "naive" = "Naive RE",
+                         "tf" = "Trim & Fill",
+                         "pp" = "PET-PEESE",
+                         "copas" = "Copas"))
+
+coverage_df <- df %>%
+  select(bias_type, k_scenario, true_effect, true_tau,
+         naive_coverage, tf_coverage, pp_coverage, copas_coverage) %>%
+  pivot_longer(cols = ends_with("_coverage"),
+               names_to = "method",
+               values_to = "coverage") %>%
+  mutate(method = recode(gsub("_coverage", "", method),
+                         "naive" = "Naive RE",
+                         "tf" = "Trim & Fill",
+                         "pp" = "PET-PEESE",
+                         "copas" = "Copas"))
+
+convergence_df <- df %>%
+  select(bias_type, k_scenario, true_effect, true_tau,
+         tf_convergence, pp_convergence, copas_convergence) %>%
+  pivot_longer(cols = ends_with("_convergence"),
+               names_to = "method",
+               values_to = "convergence") %>%
+  mutate(method = recode(gsub("_convergence", "", method),
+                         "tf" = "Trim & Fill",
+                         "pp" = "PET-PEESE",
+                         "copas" = "Copas"))
+
+# Color palette
+method_colors <- c("Naive RE" = "#E41A1C", "Trim & Fill" = "#377EB8",
+                    "PET-PEESE" = "#4DAF4A", "Copas" = "#984EA3")
+```
+
+## Overview of Simulation Conditions
+
+The comprehensive simulation encompassed `r nrow(df)` unique parameter combinations, with a total of `r format(sum(df$n_sims), big.mark = ",")` individual meta-analyses across all scenarios. Table 1 summarizes the factorial design.
+
+```{r table1}
+scenario_summary <- df %>%
+  group_by(bias_type, k_scenario) %>%
+  summarise(
+    n_conditions = n(),
+    total_sims = sum(n_sims),
+    mean_copas_conv = mean(copas_convergence, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+kable(scenario_summary,
+      col.names = c("Bias Type", "k", "Conditions", "Total Sims", "Mean Copas Convergence"),
+      caption = "Table 1: Summary of simulation conditions by bias type and number of studies.",
+      digits = 3)
+```
+
+## Bias
+
+Figure 1 presents the mean bias across methods, stratified by bias mechanism and number of studies. The naive random-effects estimator showed consistent positive bias across all conditions, confirming the expected upward distortion from publication bias. Trim and Fill reduced this bias modestly in low-heterogeneity scenarios ($\tau = 0.1$) but provided insufficient correction when $\tau \geq 0.3$.
+
+PET-PEESE exhibited a distinctive pattern: while it sometimes reduced positive bias, it frequently overcorrected, producing substantial negative bias (i.e., underestimation of the true effect). This overcorrection was most pronounced with small study counts ($k = 10$) and high heterogeneity ($\tau = 0.5$), where PET-PEESE bias exceeded $-0.4$ in some scenarios.
+
+The Copas selection model achieved bias closest to zero across most conditions, though it showed moderate residual bias in small-sample scenarios ($k = 10$).
+
+```{r fig-bias, fig.cap="Figure 1: Mean bias by heterogeneity level (tau), stratified by bias mechanism and number of studies (k). The dashed line at zero indicates no bias. Positive values indicate overestimation of the true effect; negative values indicate underestimation (overcorrection)."}
+ggplot(bias_df, aes(x = factor(true_tau), y = bias, fill = method)) +
+  geom_boxplot(outlier.size = 0.8, alpha = 0.8) +
+  facet_grid(bias_type ~ k_scenario, labeller = labeller(
+    k_scenario = function(x) paste0("k = ", x),
+    bias_type = function(x) paste0("Bias: ", x)
+  )) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey40") +
+  scale_fill_manual(values = method_colors) +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "bottom",
+        strip.background = element_rect(fill = "grey90")) +
+  labs(x = expression("Between-study heterogeneity ("*tau*")"),
+       y = "Mean Bias",
+       fill = "Method")
+```
+
+## RMSE
+
+Figure 2 displays the RMSE across methods and conditions. The Copas selection model achieved the lowest RMSE in the majority of scenarios, particularly when $k \geq 20$. PET-PEESE exhibited markedly elevated RMSE in many conditions, reflecting the high variance of its meta-regression estimates combined with its tendency to overcorrect.
+
+Trim and Fill showed competitive RMSE in low-heterogeneity scenarios but deteriorated as $\tau$ increased. The naive estimator, while biased, sometimes achieved lower RMSE than PET-PEESE because its variance was substantially smaller.
+
+```{r fig-rmse, fig.cap="Figure 2: Root Mean Square Error (RMSE) by heterogeneity level, stratified by bias mechanism and number of studies. Lower RMSE indicates better overall estimation accuracy (combining both bias and precision)."}
+ggplot(rmse_df, aes(x = factor(true_tau), y = rmse, fill = method)) +
+  geom_bar(stat = "summary", fun = "mean", position = position_dodge(width = 0.8),
+           alpha = 0.8) +
+  facet_grid(bias_type ~ k_scenario, labeller = labeller(
+    k_scenario = function(x) paste0("k = ", x),
+    bias_type = function(x) paste0("Bias: ", x)
+  )) +
+  scale_fill_manual(values = method_colors) +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "bottom",
+        strip.background = element_rect(fill = "grey90")) +
+  labs(x = expression("Between-study heterogeneity ("*tau*")"),
+       y = "Mean RMSE",
+       fill = "Method")
+```
+
+## Coverage
+
+Figure 3 shows the 95% CI coverage across methods. Coverage for the naive estimator was consistently below the nominal 95% level in the presence of publication bias, confirming that standard confidence intervals are misleading when bias is present.
+
+PET-PEESE coverage degraded dramatically as heterogeneity increased, dropping below 50% in several high-heterogeneity scenarios. This poor coverage reflects both the overcorrection bias and the wide, imprecise confidence intervals characteristic of PET-PEESE.
+
+The Copas selection model maintained the most stable coverage across conditions, though it was conservative in some low-heterogeneity settings (coverage exceeding 95%). Trim and Fill coverage was generally adequate in low-heterogeneity scenarios but declined as $\tau$ increased.
+
+```{r fig-coverage, fig.cap="Figure 3: 95% confidence interval coverage by heterogeneity level, stratified by bias mechanism and number of studies. The dotted line at 0.95 indicates nominal coverage. Values below 0.95 indicate anti-conservative inference; values above indicate conservative inference."}
+ggplot(coverage_df, aes(x = factor(true_tau), y = coverage, color = method, group = method)) +
+  stat_summary(fun = mean, geom = "line", linewidth = 0.8) +
+  stat_summary(fun = mean, geom = "point", size = 2.5) +
+  facet_grid(bias_type ~ k_scenario, labeller = labeller(
+    k_scenario = function(x) paste0("k = ", x),
+    bias_type = function(x) paste0("Bias: ", x)
+  )) +
+  geom_hline(yintercept = 0.95, linetype = "dotted", color = "grey40") +
+  scale_color_manual(values = method_colors) +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "bottom",
+        strip.background = element_rect(fill = "grey90")) +
+  labs(x = expression("Between-study heterogeneity ("*tau*")"),
+       y = "95% CI Coverage",
+       color = "Method")
+```
+
+## Convergence
+
+Not all methods converged in every simulation. Table 2 summarizes the convergence rates. The Copas model showed the lowest convergence, particularly with $k = 10$, where convergence dropped below 90% in some conditions. PET-PEESE and Trim and Fill generally achieved full convergence.
+
+```{r table2}
+conv_summary <- df %>%
+  group_by(k_scenario) %>%
+  summarise(
+    `Trim & Fill` = sprintf("%.1f%%", mean(tf_convergence, na.rm = TRUE) * 100),
+    `PET-PEESE` = sprintf("%.1f%%", mean(pp_convergence, na.rm = TRUE) * 100),
+    Copas = sprintf("%.1f%%", mean(copas_convergence, na.rm = TRUE) * 100),
+    .groups = "drop"
+  )
+
+kable(conv_summary,
+      col.names = c("k", "Trim & Fill", "PET-PEESE", "Copas"),
+      caption = "Table 2: Mean convergence rates by number of studies.",
+      align = "lccc")
+```
+
+## Effect of True Effect Size
+
+```{r fig-bias-by-effect, fig.cap="Figure 4: Mean bias by true effect size and method, averaged across heterogeneity levels and bias mechanisms. Error bars show +/- 1 standard deviation across scenarios."}
+bias_by_effect <- df %>%
+  pivot_longer(cols = c(naive_bias, tf_bias, pp_bias, copas_bias),
+               names_to = "method", values_to = "bias") %>%
+  mutate(method = recode(gsub("_bias", "", method),
+                         "naive" = "Naive RE",
+                         "tf" = "Trim & Fill",
+                         "pp" = "PET-PEESE",
+                         "copas" = "Copas"))
+
+ggplot(bias_by_effect, aes(x = factor(true_effect), y = bias, fill = method)) +
+  geom_boxplot(alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey40") +
+  scale_fill_manual(values = method_colors) +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "bottom") +
+  labs(x = expression("True Effect Size ("*theta*")"),
+       y = "Mean Bias",
+       fill = "Method")
+```
+
+Across effect sizes, PET-PEESE overcorrection was more pronounced for smaller true effects ($\theta = 0.3$), where overcorrection could reverse the sign of the estimate. For large effects ($\theta = 0.8$), all methods performed more similarly, though heterogeneity remained the dominant driver of performance differences.
+
+# Discussion
+
+Our findings highlight the fundamental trade-offs involved in publication bias adjustment and provide practical guidance for researchers.
+
+## PET-PEESE: A Cautionary Note
+
+PET-PEESE, despite its theoretical appeal and popularity in economics and psychology, exhibited the poorest overall performance in our simulations. Its overcorrection tendency -- producing negatively biased estimates -- was particularly problematic under high heterogeneity. This is because the PET regression of effect sizes on standard errors can confound genuine small-study effects with publication bias when between-study heterogeneity is present [@stanley2014metabias]. Our results align with previous findings that PET-PEESE performs poorly under heterogeneity [@carter2019correcting] and extend them by demonstrating that this problem is pervasive across bias mechanisms.
+
+## Trim and Fill: Simple but Limited
+
+Trim and Fill remains a viable option for low-heterogeneity meta-analyses ($\tau \leq 0.1$), where it achieved near-nominal coverage and low bias. However, when heterogeneity was substantial, Trim and Fill provided insufficient correction. This is expected, as the method assumes a symmetric funnel plot under the null hypothesis of no bias, an assumption that is violated when heterogeneity is large [@duval2000trim; @peters2007performance].
+
+## Copas Selection Model: Robust but Demanding
+
+The Copas selection model demonstrated the best overall performance in terms of RMSE and bias across most scenarios with $k \geq 20$. Its explicit modeling of the selection process provides a more principled correction than the heuristic approaches of Trim and Fill and PET-PEESE. However, the model requires sufficient data to estimate its selection parameters reliably, and convergence was imperfect with $k = 10$. Practitioners should verify convergence and consider the Copas model primarily for meta-analyses with at least 20 studies.
+
+## The Challenge of Small Meta-Analyses
+
+All methods struggled substantially when $k = 10$. Small study counts provide insufficient information to reliably distinguish publication bias from sampling variation, and meta-regression approaches (PET-PEESE) are particularly unstable. This finding underscores the importance of comprehensive literature searches and the inclusion of grey literature to maximize the number of studies available for analysis.
+
+## Practical Recommendations
+
+Based on our findings, we offer the following recommendations:
+
+1. **Report multiple methods:** No single adjustment method is universally best. Researchers should apply at least two methods and examine the sensitivity of their conclusions.
+2. **Consider heterogeneity:** When $\tau$ is large ($\geq 0.3$), avoid relying solely on PET-PEESE. The Copas model or sensitivity analyses may be more appropriate.
+3. **Respect sample size constraints:** With fewer than 20 studies, all adjustment methods should be interpreted cautiously. Consider sensitivity analyses over point estimates.
+4. **Use the Copas model when feasible:** For meta-analyses with $k \geq 20$, the Copas selection model offers the most balanced trade-off between bias correction and precision.
+
+## Limitations
+
+Several limitations should be acknowledged. First, while we modeled five bias mechanisms (none, continuous, and three step-function severity levels), other forms of bias such as p-hacking, outcome reporting bias, or time-lag bias were not modeled. Second, we used a fixed number of approximately 100 replications per scenario; while sufficient for estimating mean performance metrics, more replications would provide tighter confidence intervals. Third, our implementation of PET-PEESE used a specific conditional threshold ($p < 0.10$ for switching from PET to PEESE); alternative thresholds may yield different performance. Fourth, we did not evaluate more recent methods such as selection models with beta-density weights [@citkowicz2017parsimonious] or robust Bayesian meta-analysis [@maier2023robma], which represent promising directions. Finally, our scenarios used standardized mean differences; generalizability to other effect size metrics (odds ratios, correlation coefficients) requires further investigation.
+
+# Conclusions
+
+No single publication bias adjustment method is universally superior across all realistic meta-analytic conditions. PET-PEESE, despite its widespread use, frequently overcorrects under heterogeneity, producing negatively biased estimates with poor coverage. Trim and Fill offers adequate performance in low-heterogeneity settings but provides insufficient correction otherwise. The Copas selection model offers the most robust performance across conditions when at least 20 studies are available.
+
+We recommend that researchers routinely apply multiple adjustment methods and interpret their results in light of the expected heterogeneity and number of studies. Sensitivity analysis, rather than reliance on a single corrected estimate, should be the standard approach to assessing the impact of publication bias on meta-analytic conclusions. Future research should focus on developing methods that explicitly handle the interaction between heterogeneity and selection, as well as hybrid approaches that adaptively select the most appropriate correction.
+
+# Data Availability
+
+The simulation data and analysis code are available in the project repository. The comprehensive simulation dataset contains `r format(sum(df$n_sims), big.mark = ",")` individual meta-analyses across `r nrow(df)` unique parameter combinations.
+
+# References

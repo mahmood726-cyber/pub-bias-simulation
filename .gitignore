@@ -1,0 +1,49 @@
+# R project files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rprofile
+
+# R package build artifacts
+*.tar.gz
+*.Rcheck/
+
+# renv library (dependencies are restored from renv.lock)
+renv/library/
+renv/staging/
+renv/cellar/
+renv/sandbox/
+renv/python/
+
+# Rendered manuscript outputs
+manuscript/*.html
+manuscript/*.pdf
+manuscript/*.docx
+manuscript/*.tex
+manuscript/*.log
+manuscript/*.aux
+manuscript/*_files/
+manuscript/*_cache/
+
+# Generated figures (reproducible from generate_plots.R)
+manuscript/bias_plot.png
+manuscript/rmse_plot.png
+manuscript/coverage_plot.png
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# Large raw data (keep summary; raw can be regenerated)
+# Uncomment these if raw data should not be tracked:
+# comprehensive_simulation_raw.csv
+# comprehensive_simulation_raw.rds
+# simulation_full_results.csv
