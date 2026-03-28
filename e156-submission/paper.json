@@ -1,0 +1,96 @@
+{
+  "title": "Publication Bias Adjustment Methods: A 135-Scenario Simulation Comparison",
+  "slug": "pub-bias-simulation-135",
+  "author": "Mahmood Ahmad",
+  "date": "2026-03-26",
+  "body": "How do Trim and Fill, PET-PEESE, and the Copas selection model perform for correcting publication bias under varying heterogeneity and study counts in meta-analysis? We simulated 13,480 meta-analyses across 135 scenarios crossing three effect sizes, three heterogeneity levels, three study counts, and five selection mechanisms. Each dataset was analysed with unadjusted random-effects, Trim and Fill, PET-PEESE regression, and Copas maximum-likelihood selection modelling, evaluated by bias, RMSE, and coverage. The Copas model achieved the lowest median RMSE across scenarios with twenty or more studies and maintained 95% CI coverage of 89-96%, while PET-PEESE overcorrected under high heterogeneity with coverage below 50%. All methods were unstable with only ten studies, and Trim and Fill provided insufficient correction when between-study variance exceeded 0.3. No single method is universally best; selection should be guided by heterogeneity magnitude and study count, with multiple methods reported. A key limitation is that only one-sided selection was simulated, excluding outcome reporting bias and p-hacking.",
+  "word_count": 156,
+  "sentence_count": 7,
+  "sentences": [
+    {
+      "role": "Question",
+      "text": "How do Trim and Fill, PET-PEESE, and the Copas selection model perform for correcting publication bias under varying heterogeneity and study counts in meta-analysis?"
+    },
+    {
+      "role": "Dataset",
+      "text": "We simulated 13,480 meta-analyses across 135 scenarios crossing three effect sizes, three heterogeneity levels, three study counts, and five selection mechanisms."
+    },
+    {
+      "role": "Method",
+      "text": "Each dataset was analysed with unadjusted random-effects, Trim and Fill, PET-PEESE regression, and Copas maximum-likelihood selection modelling, evaluated by bias, RMSE, and coverage."
+    },
+    {
+      "role": "Primary result",
+      "text": "The Copas model achieved the lowest median RMSE across scenarios with twenty or more studies and maintained 95% CI coverage of 89-96%, while PET-PEESE overcorrected under high heterogeneity with coverage below 50%."
+    },
+    {
+      "role": "Robustness",
+      "text": "All methods were unstable with only ten studies, and Trim and Fill provided insufficient correction when between-study variance exceeded 0.3."
+    },
+    {
+      "role": "Interpretation",
+      "text": "No single method is universally best; selection should be guided by heterogeneity magnitude and study count, with multiple methods reported."
+    },
+    {
+      "role": "Boundary",
+      "text": "A key limitation is that only one-sided selection was simulated, excluding outcome reporting bias and p-hacking."
+    }
+  ],
+  "notes": {
+    "app": "pubbias.sim R package v1.0",
+    "data": "13,480 simulated meta-analyses across 135 factorial scenarios (3 effect sizes x 3 tau x 3 k x 5 bias mechanisms)",
+    "code": "https://github.com/mahmood726-cyber/pub-bias-simulation",
+    "doi": "",
+    "version": "1.0",
+    "date": "2026-03-26",
+    "validation": "DRAFT"
+  },
+  "type": "methods",
+  "primary_estimand": "RMSE of bias-corrected pooled estimate",
+  "validation": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "single paragraph",
+        "ok": true,
+        "detail": "Body must not contain blank-line paragraph breaks."
+      },
+      {
+        "name": "sentence count",
+        "ok": true,
+        "detail": "Found 7 sentences."
+      },
+      {
+        "name": "word count",
+        "ok": true,
+        "detail": "Found 156 words."
+      },
+      {
+        "name": "no headings",
+        "ok": true,
+        "detail": "No markdown headings allowed in body."
+      },
+      {
+        "name": "no links",
+        "ok": true,
+        "detail": "No links or DOI links allowed in body."
+      },
+      {
+        "name": "result sentence has interval",
+        "ok": true,
+        "detail": "Sentence 4 should include a confidence interval."
+      },
+      {
+        "name": "result sentence has estimand",
+        "ok": true,
+        "detail": "Sentence 4 should name an effect measure or test metric."
+      },
+      {
+        "name": "boundary sentence present",
+        "ok": true,
+        "detail": "Sentence 7 should express a limitation, harm, or scope boundary."
+      }
+    ]
+  },
+  "schema": "e156-v0.2"
+}
