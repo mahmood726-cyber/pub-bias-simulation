@@ -5,9 +5,9 @@ Version: 1.0.0
 Authors@R: c(
     person(
       "Mahmood", "Ahmad",
-      email = "[EMAIL_PLACEHOLDER]",
+      email = "mahmood.ahmad2@nhs.net",
       role = c("aut", "cre"),
-      comment = c(ORCID = "[ORCID_PLACEHOLDER]")
+      comment = c(ORCID = "0000-0001-9107-3704")
     )
   )
 Description: Comprehensive simulation study comparing Trim and Fill, PET-PEESE,

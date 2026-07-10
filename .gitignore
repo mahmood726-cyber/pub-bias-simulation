@@ -31,6 +31,11 @@ manuscript/bias_plot.png
 manuscript/rmse_plot.png
 manuscript/coverage_plot.png
 
+# Python (repo ships pytest smoke tests)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
 # OS files
 .DS_Store
 Thumbs.db

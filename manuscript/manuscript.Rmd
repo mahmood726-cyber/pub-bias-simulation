@@ -2,9 +2,9 @@
 title: "Evaluating the Performance of Publication Bias Adjustment Methods in Meta-Analysis: A Comprehensive Simulation Study"
 author:
   - name: Mahmood Ahmad
-    affiliation: "[AFFILIATION_PLACEHOLDER]"
-    email: "[EMAIL_PLACEHOLDER]"
-    orcid: "[ORCID_PLACEHOLDER]"
+    affiliation: "Tahir Heart Institute, Rabwah, Pakistan"
+    email: "mahmood.ahmad2@nhs.net"
+    orcid: "0000-0001-9107-3704"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 abstract: |
   **Background:** Publication bias is a critical threat to the validity of meta-analyses. Various methods have been developed to detect and adjust for this bias, including Trim and Fill (TF), PET-PEESE (PP), and the Copas selection model. However, their relative performance under varying levels of heterogeneity and study counts remains poorly characterized.
